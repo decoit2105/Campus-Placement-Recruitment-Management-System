@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Campus Placement/Recruitment Management System</title>
+    <link rel="icon" type="images/png" href="{% static 'images/logo2.png' %}" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+.scrollable-image {
+            height: 200px; /* Adjust height as needed */
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+        }
+        .scrollable-image img {
+            max-height: 100%;
+            max-width: none;
+            margin-right: 10px; /* Adjust margin as needed */
+        }
+        button {
+  position: relative;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 48px;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  z-index: 1;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  color: #ffffff;
+}
+button::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  top: 0;
+  left: 0;
+  border-radius: 48px;
+  background-image: linear-gradient(to right, #3bd9d9 0%, #b527cf 100%);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+button:hover::before {
+  width: 100%;
+}
+    </style>
+</head>
+<body>
+    <header class="text-gray-400 bg-gray-900 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+        <a class="mr-5 hover:text-white"href="{% url 'home' %}">Home</a>
+        <a class="mr-5 hover:text-white" href="{% url 'aboutproject' %}">About</a>
+        <a class="mr-5 hover:text-white" href="{% url 'about' %}">Developers</a>
+      </nav>
+      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="{% url 'home' %}">
+        <img src="{% static 'images/logo2.png' %}" alt="logo" style="border-radius: 50%;" width="50px">
+        <span class="ml-3 text-xl xl:block lg:hidden">Campus Placement/Recruitment Management System</span>
+      </a>
+      <div class="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
+        <a href="{% url 'login' %}"><button   >Login</button></a>
+      </div>
+    </div>
+  </header>
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="text-center mb-20">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-black-900 mb-4">Why Us?</h1>
+        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-black-500s">This is why employers and aspirant choose us.<br>This is why you should also choose us.</p>
+        <div class="flex mt-6 justify-center">
+          <div class="w-16 h-1 rounded-full bg-red-500 inline-flex"></div>
+        </div>
+      </div>
+      <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+        <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+          <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 mb-5 flex-shrink-0">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-black-900 text-lg title-font font-medium mb-3">Employers</h2>
+            <p class="leading-relaxed text-base">
+              This is an established agency for providing outstanding aspirants, support businesses from a wide range of sectors to help us in better understanding of our needs. <br>
+              If you need an outperforming aspirant, they have a great count of aspirants to fulfil your requirements.</p>
+          </div>
+        </div>
+        <div class="p-4 md:w-1/2 flex flex-col text-center items-center">
+
+          <div class="w-20 h-20 inline-flex items-center justify-center rounded-full bg-red-100 text-red-500 mb-5 flex-shrink-0">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div class="flex-grow">
+            <h2 class="text-black-900 text-lg title-font font-medium mb-3">Aspirants</h2>
+            <p class="leading-relaxed text-base">
+              They help you understand which area you fit in the best and they always try bringing you the best opportunity there is . Their wider range of tie-ups provide exposure.
+            </p>
+        </div>
+      </div>
+    </div>
+    <a href="{% url 'contactus' %}"><button class="flex mx-auto mt-16 text-white bg-red-500 focus:outline-none text-lg">Contact Us</button></a><br>
+    <br>
+
+<!--    <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>-->
+<!--    <div class="flex flex-wrap -m-4">-->
+<!--      <div class="p-4 md:w-1/2 w-full">-->
+<!--        <div class="h-full bg-gray-200 p-8 rounded">-->
+<!--          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">-->
+<!--            <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>-->
+<!--          </svg>-->
+<!--          <p class="leading-relaxed mb-6">It was at that moment we knew, we have chosen the best guy for our company. Thanks to EPC which helped us in getting him. <strong>Register Now</strong>, maybe you could be the next one we hire for the next job opening.</p>-->
+<!--          <a class="inline-flex items-center">-->
+<!--            <img alt="testimonial" src="https://dummyimage.com/106x106" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">-->
+<!--            <span class="flex-grow flex flex-col pl-4">-->
+<!--              <span class="title-font font-medium text-gray-900">Holden Caulfield</span>-->
+<!--              <span class="text-gray-500 text-sm">UI DEVELOPER</span>-->
+<!--            </span>-->
+<!--          </a>-->
+<!--        </div>-->
+      </div>
+      <div class="p-4 md:w-1/2 w-full">
+        <div class="h-full bg-black-200 p-8 rounded">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+            <path d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z"></path>
+          </svg><br>
+          <p class="leading-relaxed mb-6">Thanks to Campus Placement/Recruitment Management System which helped me in getting a good job which uses everyone of my skills i have mentioned in my profile tab. It is worth regitering.</p>
+<!--          <a class="inline-flex items-center">-->
+<!--            <img alt="testimonial" src="https://dummyimage.com/107x107" class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">-->
+<!--            <span class="flex-grow flex flex-col pl-4">-->
+<!--              <span class="title-font font-medium text-gray-900">Alper Kamu</span>-->
+<!--              <span class="text-gray-500 text-sm">DESIGNER</span>-->
+<!--            </span>-->
+<!--          </a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a class="flex title-font font-medium items-center md:justify-start justify-center text-black-900">
+      <img src="{% static 'images/logo2.png' %}" alt="logo" style="border-radius: 50%;" width="50px">
+      <span class="ml-3 text-xl">Campus Placement/Recruitment Management System</span>
+    </a>
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 KL UNIVERSITY CAMPUS RECRUITMENT —
+      <a href="https://www.linkedin.com/in/suryakiran1993/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@mentor</a>
+    </p>
+    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+      <a class="text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500">
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+        </svg>
+      </a>
+      <a class="ml-3 text-gray-500" href="https://www.linkedin.com/posts/amchowdaryy_y21sdp2-epc-ecs-activity-7036917508922122241-jKmh?utm_source=share&utm_medium=member_desktop" target="
+      ">
+        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+          <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+          <circle cx="4" cy="4" r="2" stroke="none"></circle>
+        </svg>
+      </a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>
